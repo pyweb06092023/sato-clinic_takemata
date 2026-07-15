@@ -594,6 +594,19 @@ img {
     order: initial;
   }
 
+  .medical-item.right-image {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .medical-item.right-image>img {
+    order: 1;
+  }
+
+  .medical-item.right-image>div {
+    order: 2;
+  }
+
   .medical-item img,
   .staff-item img {
     width: 100%;
