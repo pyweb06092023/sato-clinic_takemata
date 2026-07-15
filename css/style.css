@@ -146,19 +146,21 @@ img {
   border-collapse: collapse;
   table-layout: fixed;
   background: var(--white);
+  border: 2px solid var(--deep-green);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .hours-table th,
 .hours-table td {
-  border: 1px solid #d0d0d0;
+  border: 1px solid #b7d5c5;
   text-align: center;
-  padding: 10px 6px;
+  padding: 12px 8px;
   font-size: 11px;
   line-height: 1.2;
 }
 
 .hours-table thead th {
-  background: var(--deep-green);
+  background: linear-gradient(180deg, var(--deep-green) 0%, #0f8e74 100%);
   color: #fff;
   font-weight: 700;
 }
@@ -169,15 +171,17 @@ img {
 }
 
 .hours-table tbody th {
-  background: var(--deep-green-dark);
-  color: #fff;
+  background: #e8f4ed;
+  color: var(--text);
   font-weight: 700;
+  border-right: 2px solid #b7d5c5;
 }
 
 .hours-table td {
-  background: #fbfbfb;
+  background: #ffffff;
   font-size: 16px;
   font-weight: 700;
+  color: var(--text);
 }
 
 .hours-note {
