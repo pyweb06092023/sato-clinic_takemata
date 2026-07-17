@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページ作成中</title>
+    <style>
+        :root {
+            --primary: #005288;
+            --primary-dark: #003b62;
+            --background: #f5f8fa;
+            --text: #1f2933;
+            --muted: #66727d;
+            --card: #ffffff;
+            --border: #d9e2e8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            color: var(--text);
+            background:
+                linear-gradient(rgba(245, 248, 250, 0.92), rgba(245, 248, 250, 0.92)),
+                repeating-linear-gradient(-45deg,
+                    #eef3f6 0,
+                    #eef3f6 12px,
+                    #f8fafb 12px,
+                    #f8fafb 24px);
+            font-family: "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
+        }
+
+        .construction-card {
+            width: min(680px, 100%);
+            padding: 56px 40px;
+            text-align: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 18px 50px rgba(31, 41, 51, 0.12);
+        }
+
+        .construction-icon {
+            width: 88px;
+            height: 88px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 24px;
+            color: var(--primary);
+            background: #eaf4fa;
+            border-radius: 50%;
+            font-size: 44px;
+            line-height: 1;
+        }
+
+        .status-label {
+            display: inline-block;
+            margin-bottom: 16px;
+            padding: 6px 14px;
+            color: var(--primary-dark);
+            background: #eaf4fa;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(28px, 5vw, 40px);
+            line-height: 1.4;
+        }
+
+        .message {
+            max-width: 520px;
+            margin: 20px auto 0;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 180px;
+            margin-top: 36px;
+            padding: 13px 24px;
+            color: #ffffff;
+            background: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 6px;
+            font: inherit;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .back-button:focus-visible {
+            outline: 3px solid rgba(0, 82, 136, 0.3);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 600px) {
+            .construction-card {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="construction-card">
+        <div class="construction-icon" aria-hidden="true">🚧</div>
+
+        <p class="status-label">UNDER CONSTRUCTION</p>
+
+        <h1>このページは現在作成中です</h1>
+
+        <p class="message">
+            ご不便をおかけして申し訳ありません。<br>
+            ページの公開まで、もうしばらくお待ちください。
+        </p>
+        <button onclick="history.back()">戻る</button>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const returnUrl = params.get('return');
+        const backButton = document.querySelector('.back-button');
+
+        if (backButton) {
+            backButton.addEventListener('click', () => {
+                if (returnUrl) {
+                    window.location.href = returnUrl;
+                    return;
+                }
+
+                if (window.history.length > 1) {
+                    window.history.back();
+                    return;
+                }
+
+                window.location.href = '/';
+            });
+        }
+    </script>
+</body>
+
+</html>
