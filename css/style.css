@@ -223,6 +223,12 @@ img {
   margin: 0;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.gallery-track .gallery-slide.is-hidden {
+  opacity: 0;
 }
 
 .gallery-track img {
@@ -300,7 +306,8 @@ img {
   font-size: 12px;
 }
 
-.news-link {
+.news-link,
+.medical-item-link {
   text-align: right;
   margin-top: 12px;
   font-size: 11px;

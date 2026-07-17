@@ -99,8 +99,13 @@ if (galleryTrack && gallerySlides.length) {
 
     const updateGalleryCarousel = () => {
         const slideWidth = galleryTrack.parentElement?.clientWidth || galleryTrack.clientWidth || galleryTrack.offsetWidth;
-        galleryTrack.style.transition = 'transform 0.35s ease';
+        galleryTrack.style.transition = 'transform 0.8s ease';
         galleryTrack.style.transform = `translateX(-${galleryIndex * slideWidth}px)`;
+
+        gallerySlides.forEach((slide, index) => {
+            slide.classList.toggle('is-hidden', index !== galleryIndex);
+        });
+
         if (!galleryDots) {
             return;
         }
