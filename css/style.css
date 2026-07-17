@@ -314,6 +314,25 @@ img {
   text-decoration: underline;
 }
 
+.link-button {
+  display: inline-block;
+  border: solid 1px #005288;
+  padding: 10px 14px;
+  font-weight: 600;
+  margin: 15px 0 0;
+  color: #005288;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.news-link .link-button,
+.medical-item-link .link-button,
+.about-link .link-button {
+  margin: 15px 0 0;
+}
+
 .greeting-grid {
   grid-template-columns: 330px 1fr;
   gap: 42px;
