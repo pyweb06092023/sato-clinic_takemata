@@ -87,3 +87,86 @@ if (worksGrid && workCards.length) {
 
     buildDots();
 }
+
+const galleryTrack = document.querySelector('.gallery-track');
+const gallerySlides = document.querySelectorAll('.gallery-track .gallery-slide');
+const galleryDots = document.querySelector('.gallery-dots');
+
+if (galleryTrack && gallerySlides.length) {
+    let galleryIndex = 0;
+    let galleryTouchStartX = 0;
+    let galleryTimer = null;
+
+    const updateGalleryCarousel = () => {
+        const slideWidth = galleryTrack.parentElement?.clientWidth || galleryTrack.clientWidth || galleryTrack.offsetWidth;
+        galleryTrack.style.transition = 'transform 0.35s ease';
+        galleryTrack.style.transform = `translateX(-${galleryIndex * slideWidth}px)`;
+        if (!galleryDots) {
+            return;
+        }
+
+        const dots = Array.from(galleryDots.children);
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('is-active', index === galleryIndex);
+        });
+    };
+
+    const goToGallerySlide = (index) => {
+        if (!gallerySlides.length) {
+            return;
+        }
+        galleryIndex = (index + gallerySlides.length) % gallerySlides.length;
+        updateGalleryCarousel();
+    };
+
+    const startGalleryAutoPlay = () => {
+        clearInterval(galleryTimer);
+        galleryTimer = window.setInterval(() => {
+            goToGallerySlide(galleryIndex + 1);
+        }, 4000);
+    };
+
+    const buildGalleryDots = () => {
+        if (!galleryDots) {
+            return;
+        }
+
+        galleryDots.innerHTML = '';
+        gallerySlides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = 'gallery-dot';
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `${index + 1}枚目へ切り替える`);
+            dot.addEventListener('click', () => goToGallerySlide(index));
+            galleryDots.appendChild(dot);
+        });
+
+        updateGalleryCarousel();
+        startGalleryAutoPlay();
+    };
+
+    galleryTrack.addEventListener('mouseenter', () => {
+        clearInterval(galleryTimer);
+    });
+
+    galleryTrack.addEventListener('mouseleave', () => {
+        startGalleryAutoPlay();
+    });
+
+    galleryTrack.addEventListener('touchstart', (event) => {
+        galleryTouchStartX = event.touches[0].clientX;
+    }, { passive: true });
+
+    galleryTrack.addEventListener('touchend', (event) => {
+        const touchEndX = event.changedTouches[0].clientX;
+        const deltaX = touchEndX - galleryTouchStartX;
+
+        if (deltaX < -50) {
+            goToGallerySlide(galleryIndex + 1);
+        } else if (deltaX > 50) {
+            goToGallerySlide(galleryIndex - 1);
+        }
+    }, { passive: true });
+
+    buildGalleryDots();
+}
