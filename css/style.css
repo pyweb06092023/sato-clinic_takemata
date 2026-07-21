@@ -390,6 +390,8 @@ img {
 .medical-item.left-image>div,
 .medical-item.right-image>div {
   max-width: 430px;
+  width: 100%;
+  justify-self: start;
 }
 
 .medical-item.right-image>div {
@@ -672,6 +674,11 @@ img {
     width: 100%;
     height: auto;
     max-height: 240px;
+  }
+
+  .medical-item.left-image>div,
+  .medical-item.right-image>div {
+    max-width: none;
   }
 
   .news-grid__content h2,
