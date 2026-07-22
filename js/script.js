@@ -1,4 +1,3 @@
-﻿
 const galleryTrack = document.querySelector('.gallery-track');
 const gallerySlides = document.querySelectorAll('.gallery-track .gallery-slide');
 const galleryDots = document.querySelector('.gallery-dots');
@@ -33,6 +32,7 @@ if (galleryTrack && gallerySlides.length) {
         if (!gallerySlides.length) {
             return;
         }
+
         galleryIndex = (index + gallerySlides.length) % gallerySlides.length;
         updateGalleryCarousel();
     };
@@ -50,11 +50,12 @@ if (galleryTrack && gallerySlides.length) {
         }
 
         galleryDots.innerHTML = '';
+
         gallerySlides.forEach((_, index) => {
             const dot = document.createElement('button');
             dot.className = 'gallery-dot';
             dot.type = 'button';
-            dot.setAttribute('aria-label', `${index + 1}譫夂岼縺ｸ蛻・ｊ譖ｿ縺医ｋ`);
+            dot.setAttribute('aria-label', `${index + 1}枚目へ移動`);
             dot.addEventListener('click', () => goToGallerySlide(index));
             galleryDots.appendChild(dot);
         });
@@ -90,28 +91,10 @@ if (galleryTrack && gallerySlides.length) {
 }
 
 if (contactMap && mapZoomInputs.length) {
-    const baseMapUrl = 'https://www.google.com/maps?q=35.7102564661031,139.78121598301541';
-
-    const updateMapZoom = (zoomLevel) => {
-        // 繝ｩ繧ｸ繧ｪ繝懊ち繝ｳ縺ｮ驕ｸ謚槭↓蜷医ｏ縺帙※縲；oogle繝槭ャ繝励・諡｡螟ｧ邇・ｒ蛻・ｊ譖ｿ縺医∪縺吶・        contactMap.src = `${baseMapUrl}&z=${zoomLevel}&output=embed`;
-    };
-
-    mapZoomInputs.forEach((input) => {
-        input.addEventListener('change', () => {
-            if (!input.checked) {
-                return;
-            }
-
-            updateMapZoom(input.value);
-        });
-    });
-}
-
-if (contactMap && mapZoomInputs.length) {
     const mapBaseUrl = 'https://www.google.com/maps?q=35.7102564661031,139.78121598301541';
 
     const applyMapZoom = (zoomLevel) => {
-        // Update the embedded Google Map zoom level to match the selected radio button.
+        // ラジオボタンの選択にあわせて、埋め込み地図の拡大率を切り替えます。
         contactMap.src = `${mapBaseUrl}&z=${zoomLevel}&output=embed`;
     };
 
