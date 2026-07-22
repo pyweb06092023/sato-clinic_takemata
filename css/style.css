@@ -558,6 +558,26 @@ img {
   object-fit: cover;
 }
 
+.map-zoom-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.map-zoom-controls__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.map-zoom-controls__option input {
+  margin: 0;
+}
+
 .access-grid__content ul {
   margin: 0 0 20px 0;
   padding-left: 18px;
@@ -646,6 +666,10 @@ img {
   .staff-item {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .map-zoom-controls {
+    justify-content: flex-end;
   }
 
   .medical-item.left-image,

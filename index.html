@@ -281,12 +281,19 @@
         <h2 class="section-title">アクセス</h2>
         <div class="access-grid">
           <div class="access-grid__map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7705.227063355489!2d139.78121598301541!3d35.7102564661031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1784621925026!5m2!1sja!2sjp"
-              title="アクセスマップ"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen></iframe>
+            <iframe class="contact-map"
+              src="https://www.google.com/maps?q=35.7102564661031,139.78121598301541&z=14&output=embed" title="アクセスマップ"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="map-zoom-controls" aria-label="MAP zoom controls">
+              <label class="map-zoom-controls__option">
+                <input type="radio" name="map-zoom" value="14" checked>
+                <span>もとに</span>
+              </label>
+              <label class="map-zoom-controls__option">
+                <input type="radio" name="map-zoom" value="16">
+                <span>大きく</span>
+              </label>
+            </div>
           </div>
           <div class="access-grid__content">
             <h3>所在地</h3>
@@ -300,7 +307,12 @@
             <ul>
               <li>電話番号：<a href="tel:00000000000">00-0000-0000</a></li>
               <li>FAX 　　：00-0000-0000</li>
-              <li>メール　：info@sato-clinic-test.jp</li>
+              <li>
+                メール　：
+                <a href="mailto:info@sato-clinic-test.jp?subject=ホームページからのお問い合わせ">
+                  info@sato-clinic-test.jp
+                </a>
+              </li>
             </ul>
           </div>
         </div>

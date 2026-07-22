@@ -91,6 +91,8 @@ if (worksGrid && workCards.length) {
 const galleryTrack = document.querySelector('.gallery-track');
 const gallerySlides = document.querySelectorAll('.gallery-track .gallery-slide');
 const galleryDots = document.querySelector('.gallery-dots');
+const contactMap = document.querySelector('.contact-map');
+const mapZoomInputs = document.querySelectorAll('input[name="map-zoom"]');
 
 if (galleryTrack && gallerySlides.length) {
     let galleryIndex = 0;
@@ -174,4 +176,45 @@ if (galleryTrack && gallerySlides.length) {
     }, { passive: true });
 
     buildGalleryDots();
+}
+
+if (contactMap && mapZoomInputs.length) {
+    const baseMapUrl = 'https://www.google.com/maps?q=35.7102564661031,139.78121598301541';
+
+    const updateMapZoom = (zoomLevel) => {
+        // ラジオボタンの選択に合わせて、Googleマップの拡大率を切り替えます。
+        contactMap.src = `${baseMapUrl}&z=${zoomLevel}&output=embed`;
+    };
+
+    mapZoomInputs.forEach((input) => {
+        input.addEventListener('change', () => {
+            if (!input.checked) {
+                return;
+            }
+
+            updateMapZoom(input.value);
+        });
+    });
+}
+
+if (contactMap && mapZoomInputs.length) {
+    const mapBaseUrl = 'https://www.google.com/maps?q=35.7102564661031,139.78121598301541';
+
+    const applyMapZoom = (zoomLevel) => {
+        // Update the embedded Google Map zoom level to match the selected radio button.
+        contactMap.src = `${mapBaseUrl}&z=${zoomLevel}&output=embed`;
+    };
+
+    mapZoomInputs.forEach((input) => {
+        input.addEventListener('change', () => {
+            if (input.checked) {
+                applyMapZoom(input.value);
+            }
+        });
+    });
+
+    const checkedInput = document.querySelector('input[name="map-zoom"]:checked');
+    if (checkedInput) {
+        applyMapZoom(checkedInput.value);
+    }
 }
