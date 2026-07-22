@@ -2,8 +2,8 @@
   --green: #a9ceb8;
   --deep-green: #0a846f;
   --deep-green-dark: #0a846f;
-  --text: #111111;
-  --muted: #4a4a4a;
+  --text: #263238;
+  --muted: #333333;
   --white: #ffffff;
   --bg: #f4f4f4;
 }
@@ -21,6 +21,8 @@ body {
   min-width: 0;
   overflow-x: hidden;
   font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
   color: var(--text);
   background: var(--bg);
 }
@@ -95,7 +97,7 @@ img {
 
 .global-nav a {
   color: rgba(255, 255, 255, 0.95);
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.02em;
 }
@@ -116,15 +118,15 @@ img {
 
 .hero__copy h1 {
   margin: 0 0 16px;
-  font-size: 60px;
-  line-height: 1.12;
+  font-size: 48px;
+  line-height: 1.3;
   font-weight: 900;
   letter-spacing: 0.02em;
 }
 
 .hero__copy p {
   margin: 0;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.8;
   font-weight: 500;
 }
@@ -155,8 +157,8 @@ img {
   border: 1px solid #b7d5c5;
   text-align: center;
   padding: 12px 8px;
-  font-size: 11px;
-  line-height: 1.2;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .hours-table thead th {
@@ -192,7 +194,7 @@ img {
 
 .hours-note {
   margin-top: 14px;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
 }
 
@@ -282,7 +284,7 @@ img {
 .about-grid__content h2,
 .section-title {
   margin: 0 0 18px;
-  font-size: 35px;
+  font-size: 36px;
   line-height: 1.2;
   font-weight: 900;
   text-align: center;
@@ -303,14 +305,15 @@ img {
 .news-list li {
   border-bottom: 2px solid #222;
   padding: 10px 0 8px;
-  font-size: 12px;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 .news-link,
 .medical-item-link {
   text-align: right;
   margin-top: 12px;
-  font-size: 11px;
+  font-size: 16px;
   text-decoration: underline;
 }
 
@@ -318,6 +321,7 @@ img {
   display: inline-block;
   border: solid 1px #005288;
   padding: 10px 14px;
+  font-size: 16px;
   font-weight: 600;
   margin: 15px 0 0;
   color: #005288;
@@ -347,7 +351,7 @@ img {
 .caption {
   text-align: center;
   margin-top: 10px;
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.12em;
   color: #fff;
 }
@@ -355,14 +359,14 @@ img {
 .greeting-grid__content p,
 .about-grid__content p {
   margin: 0 0 12px;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.8;
 }
 
 .signature {
   margin-top: 14px;
   text-align: right;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .medical-grid {
@@ -412,7 +416,7 @@ img {
 .access-grid__content h3,
 .staff-item h3 {
   margin: 0 0 10px;
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -422,8 +426,8 @@ img {
 .access-grid__content li,
 .departments-block p {
   margin: 0;
-  font-size: 12px;
-  line-height: 1.75;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 .about-grid {
@@ -440,7 +444,7 @@ img {
 .about-link {
   text-align: right;
   margin-top: 16px;
-  font-size: 11px;
+  font-size: 16px;
   text-decoration: underline;
 }
 
@@ -476,14 +480,14 @@ img {
 
 .work-card__body h3 {
   margin: 0 0 8px;
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 700;
 }
 
 .work-card__body p {
   margin: 0;
-  font-size: 12px;
-  line-height: 1.75;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 .carousel-dots {
@@ -569,8 +573,8 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.8;
   cursor: pointer;
 }
 
@@ -599,7 +603,7 @@ img {
 
 .departments-list li {
   margin-bottom: 12px;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -608,7 +612,7 @@ img {
   color: #fff;
   text-align: center;
   padding: 18px 0;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 @media (max-width: 1024px) {
@@ -651,11 +655,11 @@ img {
   }
 
   .hero__copy h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .hero__copy p {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .news-grid,
@@ -730,6 +734,10 @@ img {
 
 @media (max-width: 480px) {
 
+  body {
+    font-size: 16px;
+  }
+
   .container-wide,
   .container-medium,
   .container-narrow {
@@ -756,17 +764,17 @@ img {
   }
 
   .hero__copy h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .hero__copy p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .hours-table th,
   .hours-table td {
     padding: 8px 4px;
-    font-size: 0.8rem;
+    font-size: 13px;
   }
 
   .three-gallery {
@@ -774,7 +782,7 @@ img {
   }
 
   .news-list li {
-    font-size: 11px;
+    font-size: 16px;
   }
 
   .greeting-grid__content p,
@@ -785,7 +793,38 @@ img {
   .access-grid__content li,
   .departments-block p,
   .work-card__body p {
-    font-size: 11px;
+    font-size: 16px;
+  }
+
+  .news-grid__content h2,
+  .greeting-grid__content h2,
+  .about-grid__content h2,
+  .section-title {
+    font-size: 26px;
+  }
+
+  .global-nav a,
+  .news-link,
+  .medical-item-link,
+  .about-link,
+  .link-button,
+  .signature,
+  .map-zoom-controls__option,
+  .departments-list li {
+    font-size: 16px;
+  }
+
+  .caption,
+  .hours-note,
+  .site-footer {
+    font-size: 13px;
+  }
+
+  .medical-item h3,
+  .access-grid__content h3,
+  .staff-item h3,
+  .work-card__body h3 {
+    font-size: 22px;
   }
 
   .works-grid {
