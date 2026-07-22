@@ -454,63 +454,6 @@ img {
   text-align: center;
 }
 
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 24px;
-}
-
-.work-card {
-  background: var(--white);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.08);
-}
-
-.work-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.work-card__body {
-  padding: 18px 18px 22px;
-}
-
-.work-card__body h3 {
-  margin: 0 0 8px;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.work-card__body p {
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.carousel-dots {
-  display: none;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.carousel-dot {
-  width: 10px;
-  height: 10px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(12, 156, 131, 0.3);
-  padding: 0;
-  cursor: pointer;
-}
-
-.carousel-dot.is-active {
-  background: var(--deep-green);
-}
-
 .staff-list {
   display: flex;
   flex-direction: column;
@@ -791,8 +734,7 @@ img {
   .section-lead,
   .staff-item p,
   .access-grid__content li,
-  .departments-block p,
-  .work-card__body p {
+  .departments-block p {
     font-size: 16px;
   }
 
@@ -822,32 +764,7 @@ img {
 
   .medical-item h3,
   .access-grid__content h3,
-  .staff-item h3,
-  .work-card__body h3 {
+  .staff-item h3 {
     font-size: 22px;
-  }
-
-  .works-grid {
-    display: flex;
-    overflow: hidden;
-    touch-action: pan-y;
-    padding-bottom: 4px;
-  }
-
-  .work-card {
-    flex: 0 0 100%;
-    min-width: 100%;
-  }
-
-  .work-card img {
-    height: 160px;
-  }
-
-  .work-card__body {
-    padding: 16px;
-  }
-
-  .carousel-dots {
-    display: flex;
   }
 }
